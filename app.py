@@ -9,10 +9,10 @@ import streamlit as st
 from council import run_council
 
 DEFAULT_MODELS = [
-    "openai/gpt-4o-mini",
-    "anthropic/claude-3.5-sonnet",
-    "google/gemini-2.0-flash-001",
-    "meta-llama/llama-3.3-70b-instruct",
+    "meta-llama/llama-3.2-3b-instruct:free",
+    "google/gemini-2.0-flash-exp:free",
+    "deepseek/deepseek-chat:free",
+    "qwen/qwen-2.5-72b-instruct:free",
 ]
 
 st.set_page_config(page_title="LLM Council", page_icon="🏛️", layout="wide")
@@ -38,6 +38,10 @@ with st.sidebar:
         "Council modellen (één per regel, OpenRouter model-ID's)",
         value="\n".join(DEFAULT_MODELS),
         height=120,
+        help="Standaard staan hier gratis (':free') modellen ingesteld, zodat je zonder "
+        "OpenRouter-credit kan testen. Gratis modellen hebben een limiet van ongeveer "
+        "20 verzoeken/minuut en 50/dag; zie openrouter.ai/models?max_price=0 voor de "
+        "actuele lijst.",
     )
     models = [m.strip() for m in models_text.splitlines() if m.strip()]
 

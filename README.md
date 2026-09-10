@@ -51,7 +51,10 @@ Een OpenRouter API key maak je aan op [openrouter.ai/keys](https://openrouter.ai
 
 ## Configuratie in de app
 
-- **Council modellen**: lijst van OpenRouter model-ID's (één per regel), bijv. `openai/gpt-4o-mini`.
+- **Council modellen**: lijst van OpenRouter model-ID's (één per regel). Standaard staan hier
+  gratis (`:free`) modellen zodat je zonder credit kan testen; actuele gratis modellen vind je op
+  [openrouter.ai/models?max_price=0](https://openrouter.ai/models?max_price=0) (limiet: ongeveer
+  20 verzoeken/minuut en 50/dag zonder opgeladen credit).
 - **Chairman model**: het model dat in Stage 3 het eindantwoord schrijft.
 - **Modus**: `chat_only`, `chat_ranking` of `full`.
 - **System prompt**: optioneel, wordt aan alle council-modellen meegegeven.
